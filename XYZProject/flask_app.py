@@ -36,20 +36,20 @@ class Salaries(db.Model):
 @app.route('/')
 def index():
     salaries = Salaries.query.order_by(Salaries.id).all()
-    return render_template('index.html', salaries = salaries, graphJson = sal())
+    return render_template('index.html', salaries = salaries)
 
 def database1():
     db1 = db
     return db1
-def sal(job_title = 'Data Analyst'):
-    df = pd.DataFrame(px.data.gapminder())
-    fig = px.line(df[df['job_title']==job_title], x="salary", y="remote_ratio")
+# def sal(job_title = 'Data Analyst'):
+#     df = pd.DataFrame(px.data.gapminder())
+#     fig = px.line(df[df['job_title']==job_title], x="salary", y="remote_ratio")
 
-    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    print(fig.data[0])
-    #fig.data[0]['staticPlot']=True
+#     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+#     print(fig.data[0])
+#     #fig.data[0]['staticPlot']=True
     
-    return graphJSON
+#    return graphJSON
 if __name__ == "__main__":
     app.run(debug=True)
 
