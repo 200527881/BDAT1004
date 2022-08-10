@@ -24,7 +24,7 @@ cursor = mydb.cursor()
 csv_data = csv.reader(open('Data Science Jobs Salaries.csv'))
 for row in csv_data:
 
-    cursor.execute('INSERT INTO salaries(id,work_year,experience_level,employment_type,job_title, \
+    cursor.execute('INSERT INTO salaries(work_year,experience_level,employment_type,job_title, \
           salary,salary_currency,salary_in_usd,employee_residence,remote_ratio,company_location ,company_size,)' \
           'VALUES("%s", "%s", "%s","%s", "%s", "%s","%s", "%s", "%s","%s", "%s", "%s")', 
           row)
