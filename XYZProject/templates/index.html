@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %} 
+<div class="content">
+    <h1> Salaries </h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>work_year</th>
+            <th>experience_level</th>
+            <th>employment_type</th>
+            <th>job_title</th>
+            <th>salary</th>
+            <th>salary_currency</th>
+            <th>salary_in_usd</th>
+            <th>employee_residence</th>
+            <th>remote_ratio</th>
+            <th>company_location </th>
+            <th>company_size</th>
+
+        </tr>
+        {% for s in salaries%}
+        <tr>
+            <td>{{ s.content}}
+    </table>
+</div>
+{% endblock %}
